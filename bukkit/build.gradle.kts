@@ -1,6 +1,6 @@
 plugins {
     id("feather-server-api.java-conventions")
-    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("com.gradleup.shadow") version "9.0.0"
 }
 
 repositories {
