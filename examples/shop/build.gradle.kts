@@ -30,14 +30,8 @@ dependencies {
     shopHtml(project(":examples:shop-html", "shopHtml"))
 }
 
-val copyShopHtml by tasks.registering(Copy::class) {
-    dependsOn(shopHtml)
-    from(shopHtml.files)
-    into("${buildDir}/resources/main/")
-}
-
 tasks.withType<ProcessResources> {
-    finalizedBy(copyShopHtml)
+    from(shopHtml)
     files("plugin.yml") {
         expand("version" to project.version)
     }
