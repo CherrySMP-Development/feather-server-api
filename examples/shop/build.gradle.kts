@@ -32,7 +32,7 @@ dependencies {
 
 tasks.withType<ProcessResources> {
     from(shopHtml)
-    files("plugin.yml") {
+    filesMatching("plugin.yml") {
         expand("version" to project.version)
     }
 }
